@@ -1,5 +1,5 @@
 # MSchemGen
-_An unfinished project about schematic generation in Mindustry._
+_An unfinished project about schematic generation outside Mindustry._
 
 # USAGE (Parsed JSON Data)
 ```json
