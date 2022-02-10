@@ -8,9 +8,8 @@ import LogicLink
 import processorCompress
 
 # get data
-f = open(sys.argv[1], "r")
-data = json.loads(f.read())
-f.close()
+with open(sys.argv[1], "r") as f:
+    data = json.loads(f.read())
 
 outS = io.BytesIO(b'')
 
@@ -46,9 +45,12 @@ for i in data["blocks"]:
         links = []
         for j in i["links"]:
             links += [LogicLink.LogicLink(j["x"],j["y"],j["name"],True)]
-
+        if i["code"].startswith("code:"):
+            with open(i["code"][5:],"r") as f:
+                code = f.read()
+        else: code = i["code"]
         writeByte(outS, 14)
-        more_data = processorCompress.compress(i["code"], links)
+        more_data = processorCompress.compress(code, links)
         writeInt(outS, len(more_data))
         outS.write(more_data)
     else:
@@ -58,10 +60,7 @@ for i in data["blocks"]:
     writeByte(outS, i["rotation"])
 
 # finishing
-aaaa = open("a.msch", "wb")
 data = b'msch\x01'+zlib.compress(outS.getvalue())
-# data = base64.b64encode(data)
-aaaa.write(data)
-aaaa.close()
-# print(str((b'msch\x01'+zlib.compress(outS.getvalue())),"UTF-8"))
+with open("a.msch", "wb") as f:
+    f.write(data)
 outS.close()

@@ -22,6 +22,7 @@ _An unfinished project about schematic generation outside Mindustry._
             "y" : 1,
             "rotation" : 0,
             "code" : "op add a a 1" // code of processor
+            // or you can do "code:your-file"
             // processor links
             "links" : [{"x":0,"y":0,"name":"router1"},
                        {"x":0,"y":0,"name":"router2"}
@@ -41,7 +42,7 @@ _An unfinished project about schematic generation outside Mindustry._
 
     no debug:
     ```
-    python bluerpint/main.py <your-json-file-here> > /dev/null
+    python blueprint/main.py <your-json-file-here> > /dev/null
     ```
 
     a file named `a.msch` will appear.

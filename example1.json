@@ -13,6 +13,13 @@
             "code" : "op add a a 1\n",
             "links" : [{"x":1,"y":1,"name":"wall1"}]
         },{
+            "type" : "micro-processor",
+            "x" : 0,
+            "y" : 1,
+            "rotation" : 0,
+            "code" : "code:example.mlog",
+            "links" : []
+        },{
             "type" : "copper-wall",
             "x" : 1,
             "y" : 1,
