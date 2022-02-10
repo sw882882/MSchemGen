@@ -1,0 +1,23 @@
+{
+    "name" : "MSchemGen",
+    "description" : "output of MSchemGen (example1.json)",
+    "tags" : ["[Generated Schematic]"],
+    "width" : 2,
+    "height" : 2,
+    "blocks" : [
+        {
+            "type" : "micro-processor",
+            "x" : 0,
+            "y" : 0,
+            "rotation" : 0,
+            "code" : "op add a a 1\n",
+            "links" : [{"x":1,"y":1,"name":"wall1"}]
+        },{
+            "type" : "copper-wall",
+            "x" : 1,
+            "y" : 1,
+            "rotation" : 0,
+            "config" : 0
+        }
+    ]
+}
