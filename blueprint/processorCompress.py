@@ -1,11 +1,12 @@
 import zlib
 import io
-from writeUtils import *
+from writeUtils import writeShort, writeUTF, writeInt
+
 
 def compress(code, LogicLinks):
-    print("PROCESSORCOMPRESS.COMPRESS CALL WITH CODE:",code)
-    buf = io.BytesIO(b'');
-    buf.write(b'\x01')
+    print("PROCESSORCOMPRESS.COMPRESS CALL WITH CODE:", code)
+    buf = io.BytesIO(b"")
+    buf.write(b"\x01")
     newCode = bytes(code, "UTF-8")
     writeInt(buf, len(newCode))
     buf.write(newCode)
